@@ -1,4 +1,4 @@
-# To do list  
+# To do list Application
   
 ## Description
 ### What does the app do?
