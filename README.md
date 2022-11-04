@@ -4,8 +4,8 @@
 ### What does the app do?
 This is a simple application where you can add a list of things you need to do.
 ### Functions
-    * Add things to do
-    * Delete things to do
+* Add things to do
+* Delete things to do
 ### How to build the app
     1. Build the frame using HTML and CSS
         * Title “Your to do list”
