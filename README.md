@@ -1,13 +1,12 @@
 # To do list  
   
 ## Description
-1. What does the app do?
+### What does the app do?
 This is a simple application where you can add a list of things you need to do.
-
-2. Functions
+### Functions
     * Add things to do
     * Delete things to do
-3. How to build the app
+### How to build the app
     1. Build the frame using HTML and CSS
         * Title “Your to do list”
         * Text box
