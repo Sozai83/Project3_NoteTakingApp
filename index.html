@@ -8,15 +8,14 @@
     <body>
         <h1>To do list</h1>
         <div calss="todo-input">
-            <form>
-                <label for="todo">What do you need to do?</label><br>
-                <input type="text" id="todo" name="todo">
-                <input type="submit" value="Add">
-            </form>
+            <label for="todo">What do you need to do?</label><br>
+            <input type="text" id="todo" name="todo">
+            <input type="submit" id="submit" value="Add">
         </div>
-        <div class="todo-list">
-            <ul>
-                <li>test</li>
+        <div class="list-container">
+            <ul class="list" id="list">
+                <li class="list-item"><span class="list-text">Test</span><i class="fas fa-trash-alt"></i></li>
+                <li class="list-item"><span class="list-text">Test 2</span><i class="fas fa-trash-alt"></i></li>
             </ul>
         </div>
     </body>
