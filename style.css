@@ -10,3 +10,7 @@ ul li{
 ul li .list-text{
     min-width:150px;
 }
+
+.delete:hover{
+    color:blue;
+}
