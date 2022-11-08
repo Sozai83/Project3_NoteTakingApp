@@ -23,12 +23,33 @@ input#item_amount{
 #total{
     font-size: 28px;
     font-weight: 700;
+    margin-bottom: 20px;
+}
+
+table{
+    width: 500px;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
 }
 
 td{
-    
+    padding: 10px;
 }
 
+td.date{
+    width:20%;
+}
+
+td.description{
+    width:60%;
+}
+
+td.amount{
+    width: 20%;
+}
 .delete:hover{
     color:blue;
 }
