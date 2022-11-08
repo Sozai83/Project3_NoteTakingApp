@@ -44,11 +44,15 @@ td.date{
 }
 
 td.description{
-    width:60%;
+    width:55%;
 }
 
 td.amount{
     width: 20%;
+}
+
+td.delete_button{
+    width: 5%;
 }
 .delete:hover{
     color:blue;
