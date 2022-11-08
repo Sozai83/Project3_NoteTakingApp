@@ -1,22 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>To do list app</title>
+        <title></title>
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/109e5d926d.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>To do list</h1>
-        <div calss="todo-input">
-            <label for="todo">What do you need to do?</label><br>
-            <input type="text" id="todo" name="todo">
+        <h1>Expense checker</h1>
+        <div calss="expence-input">
+            <label for="item">What are you going to buy?</label><br>
+            <input type="text" id="item" name="item" placeholder="Description">
+            <input type="text" id="item_amount" name="item_amount" placeholder="Amount">
             <input type="submit" id="submit" value="Add">
         </div>
-        <div class="list-container">
-            <ul class="list" id="list">
-                <li class="list-item"><span class="list-text">Test</span><i class="fas fa-trash-alt delete"></i></li>
-                <li class="list-item"><span class="list-text">Test 2</span><i class="fas fa-trash-alt delete"></i></li>
-            </ul>
+        <div id="total">Total Amount: <span id="total_amount">XXXX</span></div>
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Date</td>
+                        <td>Description</td>
+                        <td>Amount</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
         </div>
     </body>
     <script src="script.js"></script>
