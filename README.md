@@ -21,7 +21,7 @@ This is a simple application where you can add a list of things you need to do.
     * Table to show things to buy
     * Delete button next to the to do item
 2. Add functions using Javascript
-    * When you click “submit” button, text inside of it will added to the to the table
+    * When you click “submit” button, text inside of it will added to the to the table if there are values
     * Caluculate total amount of the things to buy
     * Remove texts from the text input area
     * When you click “delete” button next a to do item, the item will be removed from the list.
