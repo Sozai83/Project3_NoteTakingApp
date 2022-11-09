@@ -8,7 +8,7 @@ This is a simple application where you can add a list of things you need to do.
 * Delete things to buy
 * Caluculate total amount
 ### How to use the app
-1. Access to the [link](https://scproject1-todolist.netlify.app/).  
+1. Access to the [link](https://project2-budgetapp.netlify.app/).  
 2. Add todo list item by typing it in the input are and click "Add" or press enter key
 3. Remove todo list item by clicking the bin button next to the item.
 
