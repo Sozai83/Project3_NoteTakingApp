@@ -2,14 +2,14 @@
   
 ## Description
 ### What does the app do?
-This is a simple application where you can add a list of things you need to do.
+This is a simple application where you can add a list of things you want to buy. The application will caluculate the sum of the things you want to buy automatically.
 ### Functions
 * Add things you want to buy
 * Delete things to buy
 * Caluculate total amount
 ### How to use the app
 1. Access to the [link](https://project2-budgetapp.netlify.app/).  
-2. Add todo list item by typing it in the input are and click "Add" or press enter key
+2. Add things to buy by typing it in the input are and click "Add" or press enter key
 3. Remove todo list item by clicking the bin button next to the item.
 
 ### How to build the app
