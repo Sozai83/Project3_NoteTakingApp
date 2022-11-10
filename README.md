@@ -1,22 +1,28 @@
-# To do list Application
+# Note Taking Application
   
 ## Description
 ### What does the app do?
-This is a simple application where you can add a list of things you want to buy. The application will caluculate the sum of the things you want to buy automatically.
+This is a simple application where you can take notes.
+There is a function to clear the input, delte a note or delete entire notes.
 ### Functions
-* Add things you want to buy
-* Delete things to buy
-* Caluculate total amount
+* Add notes
+* When you click the note card, it will open up the whole note
+* Delete a note selected (card and the popup)
+* Delete all notes taken
+* Clear the input
 ### How to use the app
-1. Access to the [link](https://project2-budgetapp.netlify.app/).  
-2. Add things to buy by typing it in the input are and click "Add" or press enter key
-3. Remove todo list item by clicking the bin button next to the item.
+1. Access to the [link]().  
+2. Add note by typing title and the note, and press "Add" button
+3. Remove one note by clicking the trashs can button on the note, or delete all notes by cliking delete all button
 
 ### How to build the app
 1. Build the frame using HTML and CSS
-    * Title “Expense checker", "What are you going to buy?"
-    * Text box to type in the description and the amount
-    * Submit button
+    * Title "Note Taking App"
+    * Input for title
+    * Textbox for note
+    * Add and Clear button under the note input
+    * Area to add notes
+    * 
     * Total amount
     * Table to show things to buy
     * Delete button next to the to do item
