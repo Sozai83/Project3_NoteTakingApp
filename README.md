@@ -22,12 +22,22 @@ There is a function to clear the input, delte a note or delete entire notes.
     * Textbox for note
     * Add and Clear button under the note input
     * Area to add notes
-    * 
-    * Total amount
-    * Table to show things to buy
-    * Delete button next to the to do item
+    * Note cards (Closed)
+    * * Has title and the body gets cut off (CSS)
+    * * Has "Delete" button
+    * * When you click the card, it will open up and overlays 
+    * Note cards (Opened)
+    * * Shows full title and full body
+    * * Has close button
+    * * Has "Delete" button - If this is pressed, it will remove this note and clear this overlay
+    * Delete all note button on the bottom
+
 2. Add functions using Javascript
-    * When you click “submit” button, text inside of it will added to the to the table if there are values
-    * Caluculate total amount of the things to buy
-    * Remove texts from the text input area
-    * When you click “delete” button next a to do item, the item will be removed from the list.
+    * When you click "Add" button
+    * * Save note title and body
+    * * Add it as a note card
+    * Clear input title and note body
+    * Open up a overlayed window with the note content when you click one of the note
+    * Close the overlayed window when close button is clicked
+    * Delete the note when delete button is clicked
+    * Delete all notes when delete all button is clicked
