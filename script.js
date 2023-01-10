@@ -49,8 +49,7 @@ const addToDoItem = ()=>{
         amountList.push(parseFloat(amount));
         emptyInput(descriptionValue);
         emptyInput(amountValue);
-        calcAmount(amountList);
-        totalAmount.textContent = sum;
+        totalAmount.textContent = calcAmount(amountList);
     }
 }
 
@@ -58,10 +57,10 @@ const addToDoItem = ()=>{
 const removeToDoItem = el =>{
     let item = el.parentNode.parentNode;
     let removeAmount = parseFloat(item.getElementsByClassName('amount')[0].textContent);
-    amountList = amountList.filter(function(e) { return e != removeAmount })
+    let removeEl = amountList.findIndex(el => el == removeAmount);
+    amountList.splice(removeEl,1);
     item.remove();
-    calcAmount(amountList);
-    totalAmount.textContent = sum;
+    totalAmount.textContent = calcAmount(amountList);
 }
 
 //When Add button is clicked, add a todo Item
