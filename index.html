@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title>Note Taking Application</title>
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/109e5d926d.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>Expense checker</h1>
-        <div class="expence-input">
-            <label for="item">What are you going to buy?</label><br>
-            <input type="text" id="item" name="item" placeholder="Description">
-            <input type="text" id="item_amount" name="item_amount" placeholder="Amount">
-            <input type="submit" id="submit" value="Add">
+        <div class="gray">
+            <h1>Note Taking App!</h1>
+            <div class="note-input">
+                <input class="note-title" placeholder="Note Title"></input>
+                <textarea class="note-body" placeholder="text" rows="5" cols="50"></textarea>
+                <button id="clear">Clear</button>
+                <button id="add">Add</button>
+            </div>
+            <div class="note-cards">
+                <!-- <div class="note-cards-title">Notes</div> -->
+                <div class="note-card note-card-1">
+                    <div class="title">Note Title</div>
+                    <div class="body">Note Body</div>
+                    <button class="show-full">Show Full Note</button>
+                    <button class="delete">Delete</button>
+                </div>
+                <div class="note-card note-card-2">
+                    <div class="title">Note Title</div>
+                    <div class="body">Note Body</div>
+                    <button class="show-full">Show Full Note</button>
+                    <button class="delete">Delete</button>
+                </div>
+                <div class="note-card note-card-3">
+                    <div class="title">Note Title</div>
+                    <div class="body">Note Body</div>
+                    <button class="show-full">Show Full Note</button>
+                    <button class="delete">Delete</button> 
+                </div>
+                <div class="note-card note-card-4">
+                    <div class="title">Note Title</div>
+                    <div class="body">Note Body this is a very very long loooooooooooooooooong txt you need to hide somes a very very long loooooooooooooooooong txt you need to hide som</div>
+                    <button class="show-full">Show Full Note</button>
+                    <button class="delete">Delete</button>
+                </div>
+            <button class="delete-all">Delete All</button>
+            </div>
         </div>
-        <div id="total">Total Amount: <span id="total_amount">XXXX</span></div>
-        <div class="table-container">
-            <table>
-                <thead>
-                    <tr>
-                        <td class="date">Date</td>
-                        <td class="description">Description</td>
-                        <td class="amount">Amount</td>
-                        <td class="delete_button"><i class="fas fa-trash-alt delete"></i></td>
-                    </tr>
-                </thead>
-                <tbody class="list">
-                    <!-- <tr>
-                        <td class="date">Date</td>
-                        <td class="description">Description</td>
-                        <td class="amount">Amount</td>
-                        <td class="delete_button"><i class="fas fa-trash-alt delete"></i></td>
-                    </tr> -->
-                </tbody>
-            </table>
+        <div class="popup">
+            <div class="note">
+                <div class="title">Note Title</div>
+                <div class="body">Note Body</div>
+            </div>
+            <div class="buttons">
+                <button class="close">Close</button>
+                <button class="delete">Delete</button>
+            </div>
         </div>
     </body>
     <script src="script.js"></script>
