@@ -1,0 +1,23 @@
+{
+  "name": "project3_notetakingapp",
+  "version": "1.0.0",
+  "description": "This is a simple application where you can take notes.\r There is a function to clear the input, delte a note or delete entire notes.\r ### Functions\r * Add notes\r * When you click the note card, it will open up the whole note\r * Delete a note selected (card and the popup)\r * Delete all notes taken\r * Clear the input\r ### How to use the app\r 1. Access to the [link]().  \r 2. Add note by typing title and the note, and press \"Add\" button\r 3. Remove one note by clicking the trashs can button on the note, or delete all notes by cliking delete all button",
+  "main": "hellonode.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sozai83/Project3_NoteTakingApp.git"
+  },
+  "author": "Shiori Chiku",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sozai83/Project3_NoteTakingApp/issues"
+  },
+  "homepage": "https://github.com/Sozai83/Project3_NoteTakingApp#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "live-server": "^1.2.2"
+  }
+}

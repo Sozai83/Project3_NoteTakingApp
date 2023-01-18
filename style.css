@@ -85,6 +85,8 @@ body {
 
 .popup .note{
     min-height: 74vh;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .popup .note .title{
@@ -94,4 +96,9 @@ body {
 
 .popup .note .body{
     font-size: 18px;
+}
+
+.popup .buttons{
+    width: 80%;
+    margin: 0 auto;
 }
