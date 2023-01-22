@@ -9,16 +9,16 @@ body {
     width: 100%;
 }
 
-.note-title,
-.note-body{
+.input-note-title,
+.input-note-body{
     width: 100%;
 }
 
-.note-title{
+.input-note-title{
     font-size: 20px;
 }
 
-.note-body{
+.input-note-body{
     font-size: 14px;
 }
 
