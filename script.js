@@ -1,7 +1,8 @@
 const clearNoteBtn = document.getElementById('clear-note-input');
 const addNoteBtn = document.getElementById('add-note-input');
 const inputTitle = document.getElementsByClassName('input-note-title');
-const inputBody = document.getElementsByClassName('input-note-body')
+const inputBody = document.getElementsByClassName('input-note-body');
+const noteCard = document.getElementById('note-cards-title');
 
 const noteList = [];
 
@@ -31,6 +32,9 @@ const addNote = function(){
 
         // Push the tempObj at the end of the array
         noteList.push(tempObj);
+
+        clearNote();
+        createNotes(noteList);
     }
 }
 
@@ -38,6 +42,14 @@ const addNote = function(){
 const clearNote = function(){
     inputTitle[0].value = '';
     inputBody[0].value = '';
+}
+
+// Create note card from the array
+const createNotes = function(arr){
+    let noteHtml = '';
+    noteHtml += '<div class="note-card '+ arr[arr.length - 1].id + '"><div class="title">' + arr[arr.length - 1].title + '</div><div class="body">' + arr[arr.length - 1].body +'</div><button class="show-full">Show Full Note</button><button class="delete">Delete</button></div>'
+    console.log(noteHtml);
+    noteCard.insertAdjacentHTML('afterend', noteHtml);
 }
 
 

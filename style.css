@@ -9,6 +9,12 @@ body {
     width: 100%;
 }
 
+#clear-note-input,
+#add-note-input{
+    float: right;
+    margin: 20px 4px;
+}
+
 .input-note-title,
 .input-note-body{
     width: 100%;
@@ -31,7 +37,7 @@ body {
     flex-wrap: wrap;
 }
 
-.note-cards-title{
+#note-cards-title{
     width: 100%;
 }
 
