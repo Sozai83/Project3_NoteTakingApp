@@ -34,7 +34,7 @@ const addNote = function(){
         noteList.push(tempObj);
 
         clearNote();
-        createNoteCards(noteList);
+        createNoteCards(noteList[noteList.length - 1]);
     }
 }
 
@@ -45,15 +45,14 @@ const clearNote = function(){
 }
 
 // Create note card from the array
-const createNoteCards = function(arr){
-    let noteCardHtml = '';
-    noteHtml += '<div class="note-card '+ arr[arr.length - 1].id + '"><div class="title">' + arr[arr.length - 1].title + '</div><div class="body">' + arr[arr.length - 1].body +'</div><button class="show-full">Show Full Note</button><button class="delete">Delete</button></div>'
-    console.log(noteHtml);
+const createNoteCards = function(item){
+    let noteCardHtml = document.getElementById('note-cards-title');
+    let noteHtml = `<div class="note-card" id="${item.id}"><div class="title">${item.title}</div><div class="body">${item.body}</div><button class="show-full">Show Full Note</button><button class="delete">Delete</button></div>`
     noteCardHtml.insertAdjacentHTML('afterend', noteHtml);
 }
 
 const createNotes = function(arr){
-
+    
 }
 
 // Ditect when clear and add button is clicked
