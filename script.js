@@ -5,6 +5,8 @@ const inputBody = document.getElementsByClassName('input-note-body');
 const noteCard = document.getElementById('note-cards-title');
 const noteCardContainer = document.getElementById('note-card-container');
 const deleteAllNoteBtn = document.getElementById('delete-all');
+const overLay = document.getElementById('overlay');
+const overLayNote = document.getElementById('overlay-note');
 
 let noteList = [];
 
@@ -36,7 +38,7 @@ const addNote = function(){
         noteList.push(tempObj);
 
         clearNote();
-        createNoteCards(noteList[noteList.length - 1]);
+        renderNoteCards(noteList[noteList.length - 1]);
     }
 }
 
@@ -47,8 +49,7 @@ const clearNote = function(){
 }
 
 // Create note card
-const createNoteCards = function(item){
-    let noteCardHtml = document.getElementById('note-cards-title');
+const renderNoteCards = function(item){
     let noteHtml = `<div class="note-card" id="${item.id}"><div class="title">${item.title}</div><div class="body">${item.body}</div><button class="show-full">Show Full Note</button><button class="delete">Delete</button></div>`
     noteCardContainer.insertAdjacentHTML('afterbegin', noteHtml);
 }
@@ -70,8 +71,17 @@ const deleteAllNote = function(){
     noteCardContainer.innerHTML='';
 }
 
-const expandNotes = function(item){
-    
+const expandNotes = function(e){
+    const hasClass = e.target.classList.contains('show-full');
+    if (hasClass){
+        const tempNoteCard =  e.target.parentNode;
+        const tempNoteId = tempNoteCard.id;
+        const tempExpandNote = noteList.filter(note=> note.id == tempNoteId)[0];
+        overLay.classList.remove('hidden');
+
+        const noteHtml = `<div class="note-overLay" id="${tempExpandNote.id}"><div class="title">${tempExpandNote.title}</div><div class="body">${tempExpandNote.body}</div><button class="show-full">Show Full Note</button><button class="delete">Delete</button></div>`
+        overLayNote.insertAdjacentHTML('afterbegin', noteHtml);
+    }
 }
 
 // Ditect when clear and add button is clicked
@@ -79,3 +89,4 @@ clearNoteBtn.addEventListener('click', clearNote);
 addNoteBtn.addEventListener('click', addNote);
 deleteAllNoteBtn.addEventListener('click', deleteAllNote);
 noteCardContainer.addEventListener('click', deleteNote);
+noteCardContainer.addEventListener('click', expandNotes);
