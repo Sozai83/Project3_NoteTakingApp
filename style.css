@@ -41,6 +41,11 @@ body {
     width: 100%;
 }
 
+#note-card-container{
+    width: 100%;
+    display: flex;
+}
+
 .note-card{
     background-color: white;
     width: calc(50% - 42px);
@@ -65,7 +70,7 @@ body {
     height: 3.6em;
 }
 
-.delete-all{
+#delete-all{
     width: 80%;
     padding: 5px;
     margin: 10px auto;
@@ -107,4 +112,26 @@ body {
 .popup .buttons{
     width: 80%;
     margin: 0 auto;
+}
+
+.hidden{
+    display: none;
+}
+
+.overlay{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(191, 191, 191, .7);
+}
+
+.overlay-note{
+    position: relative;
+    top: 10vh;
+    left: 10%;
+    width: 80%;
+    height: 80vh;
+    background: white;
 }
