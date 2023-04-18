@@ -54,11 +54,17 @@ const createNoteCards = function(item){
 }
 
 // delete note
-const deleteNote = function(item){
-    
-
+const deleteNote = function(e){
+    const hasClass = e.target.classList.contains('delete');
+    if (hasClass){
+        const tempNoteCard =  e.target.parentNode;
+        const tempNoteId = tempNoteCard.id;
+        tempNoteCard.remove();
+        noteList = noteList.filter(note=> note.id !== tempNoteId);
+    }
 }
 
+// delete all note
 const deleteAllNote = function(){
     noteList = [];
     noteCardContainer.innerHTML='';
@@ -72,3 +78,4 @@ const expandNotes = function(item){
 clearNoteBtn.addEventListener('click', clearNote);
 addNoteBtn.addEventListener('click', addNote);
 deleteAllNoteBtn.addEventListener('click', deleteAllNote);
+noteCardContainer.addEventListener('click', deleteNote);
