@@ -3,8 +3,10 @@ const addNoteBtn = document.getElementById('add-note-input');
 const inputTitle = document.getElementsByClassName('input-note-title');
 const inputBody = document.getElementsByClassName('input-note-body');
 const noteCard = document.getElementById('note-cards-title');
+const noteCardContainer = document.getElementById('note-card-container');
+const deleteAllNoteBtn = document.getElementById('delete-all');
 
-const noteList = [];
+let noteList = [];
 
 class Note {
     constructor() {
@@ -44,17 +46,29 @@ const clearNote = function(){
     inputBody[0].value = '';
 }
 
-// Create note card from the array
+// Create note card
 const createNoteCards = function(item){
     let noteCardHtml = document.getElementById('note-cards-title');
     let noteHtml = `<div class="note-card" id="${item.id}"><div class="title">${item.title}</div><div class="body">${item.body}</div><button class="show-full">Show Full Note</button><button class="delete">Delete</button></div>`
-    noteCardHtml.insertAdjacentHTML('afterend', noteHtml);
+    noteCardContainer.insertAdjacentHTML('afterbegin', noteHtml);
 }
 
-const createNotes = function(arr){
+// delete note
+const deleteNote = function(item){
+    
+
+}
+
+const deleteAllNote = function(){
+    noteList = [];
+    noteCardContainer.innerHTML='';
+}
+
+const expandNotes = function(item){
     
 }
 
 // Ditect when clear and add button is clicked
 clearNoteBtn.addEventListener('click', clearNote);
 addNoteBtn.addEventListener('click', addNote);
+deleteAllNoteBtn.addEventListener('click', deleteAllNote);
