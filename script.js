@@ -84,25 +84,36 @@ const closeExpandNote = function(e){
     }
 }
 
-
+//Call back function when buttons in a note card is clicked
 const noteCardFunc = function(e){
+    //Check the if the target contains delete  or show-full class
+    // if so, return the strin, else return false
     const hasClass = e.target.classList.contains('delete') ? 'delete' : e.target.classList.contains('show-full') ? 'showFull' : false;
   
+    //if hasClass is not false
     if(hasClass){
+        //get parentNode of the target
         const tempNoteCard =  e.target.parentNode;
+        //get id of the parent node
         const tempNoteId = tempNoteCard.id;
 
+        //if hasClass is delete, call deleteNote function
         if (hasClass === 'delete'){
             deleteNote(tempNoteCard, tempNoteId);
+            //anything else (show-full), call expandNote function
         }else{
             expandNote(tempNoteId);
         }
     }
 }
 
-// Ditect when clear and add button is clicked
+// Ditect when clear button is clicked > call clearNote function
 clearNoteBtn.addEventListener('click', clearNote);
+// Delect when add button is clicked > Call addNote function
 addNoteBtn.addEventListener('click', addNote);
+// Delect when delete all button is clicked > Call deleteAllNote function
 deleteAllNoteBtn.addEventListener('click', deleteAllNote);
+// Delect when click occured in noteCard container all button is clicked > Call noteCardFunc function
 noteCardContainer.addEventListener('click', noteCardFunc);
+// Detect when click occured on OverLay element > Call closeExpandNote function
 overLay.addEventListener('click', closeExpandNote);
