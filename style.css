@@ -127,11 +127,46 @@ body {
     background: rgba(191, 191, 191, .7);
 }
 
-.overlay-note{
+.overlay-note-container{
     position: relative;
     top: 10vh;
     left: 10%;
     width: 80%;
     height: 80vh;
+    padding: 40px;
     background: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.overlay-note{
+    width: 100%;
+    height: calc( 100% - 100px);
+}
+
+.overlay-note .title{
+    font-size: 24px;
+    font-weight: 600;
+    padding: 20px;
+    background: lightgray;
+    text-align: center;
+}
+
+.overlay-note .body{
+    font-size: 16px;
+    padding: 20px;
+    text-align: center;
+    overflow: scroll;
+    height: calc(100% - 84px);
+}
+
+#close-expaneded-note{
+    padding: 20px;
+    width: 80%;
+    height: 60px;
+    margin: 40px auto;
+}
+
+button:hover{
+    cursor: pointer;
 }
