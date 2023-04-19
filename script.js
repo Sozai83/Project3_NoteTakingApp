@@ -54,33 +54,38 @@ const renderNoteCards = function(item){
     noteCardContainer.insertAdjacentHTML('afterbegin', noteHtml);
 }
 
-// delete note
-const deleteNote = function(e){
-    const hasClass = e.target.classList.contains('delete');
-    if (hasClass){
-        const tempNoteCard =  e.target.parentNode;
-        const tempNoteId = tempNoteCard.id;
-        tempNoteCard.remove();
-        noteList = noteList.filter(note=> note.id !== tempNoteId);
-    }
-}
-
 // delete all note
 const deleteAllNote = function(){
     noteList = [];
     noteCardContainer.innerHTML='';
+    clearNote();
 }
 
-const expandNotes = function(e){
-    const hasClass = e.target.classList.contains('show-full');
-    if (hasClass){
+// delete note
+const deleteNote = function(tempNoteCard, tempNoteId){
+    tempNoteCard.remove();
+    noteList = noteList.filter(note=> note.id !== tempNoteId);
+}
+
+const expandNotes = function(tempNoteId){
+    const tempExpandNote = noteList.filter(note=> note.id == tempNoteId)[0];
+    overLay.classList.remove('hidden');
+    const noteHtml = `<div class="note-overLay" id="${tempExpandNote.id}"><div class="title">${tempExpandNote.title}</div><div class="body">${tempExpandNote.body}</div><button class="show-full">Show Full Note</button><button class="delete">Delete</button></div>`
+    overLayNote.insertAdjacentHTML('afterbegin', noteHtml);
+}
+
+const noteCardFunc = function(e){
+    const hasClass = e.target.classList.contains('delete') ? 'delete' : e.target.classList.contains('show-full') ? 'showFull' : false;
+  
+    if(hasClass){
         const tempNoteCard =  e.target.parentNode;
         const tempNoteId = tempNoteCard.id;
-        const tempExpandNote = noteList.filter(note=> note.id == tempNoteId)[0];
-        overLay.classList.remove('hidden');
 
-        const noteHtml = `<div class="note-overLay" id="${tempExpandNote.id}"><div class="title">${tempExpandNote.title}</div><div class="body">${tempExpandNote.body}</div><button class="show-full">Show Full Note</button><button class="delete">Delete</button></div>`
-        overLayNote.insertAdjacentHTML('afterbegin', noteHtml);
+        if (hasClass === 'delete'){
+            deleteNote(tempNoteCard, tempNoteId);
+        }else{
+            expandNotes(tempNoteId);
+        }
     }
 }
 
@@ -88,5 +93,4 @@ const expandNotes = function(e){
 clearNoteBtn.addEventListener('click', clearNote);
 addNoteBtn.addEventListener('click', addNote);
 deleteAllNoteBtn.addEventListener('click', deleteAllNote);
-noteCardContainer.addEventListener('click', deleteNote);
-noteCardContainer.addEventListener('click', expandNotes);
+noteCardContainer.addEventListener('click', noteCardFunc);
