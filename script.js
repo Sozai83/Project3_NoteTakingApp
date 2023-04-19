@@ -54,39 +54,66 @@ const renderNoteCards = function(item){
     noteCardContainer.insertAdjacentHTML('afterbegin', noteHtml);
 }
 
-// delete note
-const deleteNote = function(e){
-    const hasClass = e.target.classList.contains('delete');
-    if (hasClass){
-        const tempNoteCard =  e.target.parentNode;
-        const tempNoteId = tempNoteCard.id;
-        tempNoteCard.remove();
-        noteList = noteList.filter(note=> note.id !== tempNoteId);
-    }
-}
-
 // delete all note
 const deleteAllNote = function(){
     noteList = [];
     noteCardContainer.innerHTML='';
+    clearNote();
 }
 
-const expandNotes = function(e){
-    const hasClass = e.target.classList.contains('show-full');
-    if (hasClass){
-        const tempNoteCard =  e.target.parentNode;
-        const tempNoteId = tempNoteCard.id;
-        const tempExpandNote = noteList.filter(note=> note.id == tempNoteId)[0];
-        overLay.classList.remove('hidden');
+// delete note
+const deleteNote = function(tempNoteCard, tempNoteId){
+    tempNoteCard.remove();
+    noteList = noteList.filter(note=> note.id !== tempNoteId);
+}
 
-        const noteHtml = `<div class="note-overLay" id="${tempExpandNote.id}"><div class="title">${tempExpandNote.title}</div><div class="body">${tempExpandNote.body}</div><button class="show-full">Show Full Note</button><button class="delete">Delete</button></div>`
-        overLayNote.insertAdjacentHTML('afterbegin', noteHtml);
+// show note in full screen
+const expandNote = function(tempNoteId){
+    const tempExpandNote = noteList.filter(note=> note.id == tempNoteId)[0];
+    overLay.classList.remove('hidden');
+    const noteHtml = `<div class="title">${tempExpandNote.title}</div><div class="body">${tempExpandNote.body}</div>`
+    overLayNote.insertAdjacentHTML('afterbegin', noteHtml);
+}
+
+// close note in full screen
+const closeExpandNote = function(e){
+    const hasClass = e.target.classList.contains('overlay') || e.target.classList.contains('close-expaneded-note') ? true : false;
+    if(hasClass){
+        overLay.classList.add('hidden');
+        overLayNote.innerHTML = '';
     }
 }
 
-// Ditect when clear and add button is clicked
+//Call back function when buttons in a note card is clicked
+const noteCardFunc = function(e){
+    //Check the if the target contains delete  or show-full class
+    // if so, return the strin, else return false
+    const hasClass = e.target.classList.contains('delete') ? 'delete' : e.target.classList.contains('show-full') ? 'showFull' : false;
+  
+    //if hasClass is not false
+    if(hasClass){
+        //get parentNode of the target
+        const tempNoteCard =  e.target.parentNode;
+        //get id of the parent node
+        const tempNoteId = tempNoteCard.id;
+
+        //if hasClass is delete, call deleteNote function
+        if (hasClass === 'delete'){
+            deleteNote(tempNoteCard, tempNoteId);
+            //anything else (show-full), call expandNote function
+        }else{
+            expandNote(tempNoteId);
+        }
+    }
+}
+
+// Ditect when clear button is clicked > call clearNote function
 clearNoteBtn.addEventListener('click', clearNote);
+// Delect when add button is clicked > Call addNote function
 addNoteBtn.addEventListener('click', addNote);
+// Delect when delete all button is clicked > Call deleteAllNote function
 deleteAllNoteBtn.addEventListener('click', deleteAllNote);
-noteCardContainer.addEventListener('click', deleteNote);
-noteCardContainer.addEventListener('click', expandNotes);
+// Delect when click occured in noteCard container all button is clicked > Call noteCardFunc function
+noteCardContainer.addEventListener('click', noteCardFunc);
+// Detect when click occured on OverLay element > Call closeExpandNote function
+overLay.addEventListener('click', closeExpandNote);
