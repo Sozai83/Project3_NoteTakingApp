@@ -1,6 +1,4 @@
 # Note Taking Application
-
-[Test this app](https://sozai83.github.io/Project3_NoteTakingApp/)
   
 ## Description
 ### What does the app do?
@@ -13,7 +11,7 @@ There is a function to clear the input, delte a note or delete entire notes.
 * Delete all notes taken
 * Clear the input
 ### How to use the app
-1. Access to the [link]().  
+1. Access to the [link](https://sozai83.github.io/Project3_NoteTakingApp/).  
 2. Add note by typing title and the note, and press "Add" button
 3. Remove one note by clicking the trashs can button on the note, or delete all notes by cliking delete all button
 
